@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Cadastro.css">
+</head>
+<body>
+    
+<main class="pagina">
+
+    <div class="fundo">ROCK</div>
+
+    <div class="cadastro">
+        <div class="cadastro-titulo">
+            <p class="logo"><span>ROCK</span>BASE</p>
+            <h1 class="titulo-pagina">Criar conta</h1> 
+        </div>
+
+        <div class="formulario-cadastro">
+            <label for="ipt_nome"class="texto-formulario" >Nome Completo</label>
+            <input class="entrada" type="text" id="ipt_nome" placeholder="Digite o seu nome:">
+        </div>
+
+        <div class="formulario-cadastro">
+            <label for="ipt_email" class="texto-formulario" >Digite o seu email:</label>
+                <input class="entrada" type="email" id="ipt_email" placeholder="abc@dominio.com">
+        </div>
+        <div class="formulario-cadastro">
+            <label for="ipt_senha" class="texto-formulario" >Digite a sua senha:</label>
+            <input class="entrada" type="password" id="ipt_senha" placeholder="No minimo 6 caracteres:">
+        </div>
+        <div class="formulario-cadastro">
+            <label for="ipt_confirmar" class="texto-formulario" >Confirme a sua senha:</label>
+            <input class="entrada" type="password" id="ipt_confirmar" placeholder="Confirme a sua senha">
+        </div>
+
+        <button class="botão-cadastro" onclick="Cadastrar()">Cadastrar</button>
+
+         <p class="footer">Já tem uma conta? <a href="Login.html"> Entrar</a></p>
+
+                <div class="mensagem" id="mensagem"></div>
+    </div>
+   
+</main>
+<script>
+    especiais = ['!','@','#','$','%','¨¨','&','*']
+    function Cadastrar(){
+
+       
+
+        let NomeVar = document.getElementById('ipt_nome').value;
+        let SenhaVar = document.getElementById('ipt_senha').value;
+        let ConfirmarVar = document.getElementById('ipt_confirmar').value;
+        let EmailVar = document.getElementById('ipt_email').value;
+        let validado = true
+        if(SenhaVar.length < 6){
+            mensagem.innerHTML = `A senha é muito fraca`
+            validado = false
+        }
+
+        for (let i = 0; i < especiais.length; i++) {
+            
+                if (NomeVar.includes(especiais[i])) {
+                    mensagem.innerHTML = `Só letras normais no nome`
+                    validado = false
+                }
+        }
+
+        if (NomeVar == '' || SenhaVar == '' || ConfirmarVar == '' || EmailVar == '' ) {
+            mensagem.innerHTML = `Não deixe nenhum espaço em branco`
+            validado = false
+        }
+
+       if (!EmailVar.includes('@') || !EmailVar.includes('.') ) {
+            mensagem.innerHTML = `O email está escrito errado`
+            validado = false
+       }
+
+        if (SenhaVar != ConfirmarVar ) {
+            mensagem.innerHTML = `As senhas não coincidem`
+            validado = false
+        }
+
+
+        if (validado === true) {
+            mensagem.innerHTML = `Conta criada com sucesso!!`
+           window.location.href = 'Login.html'
+        }
+
+
+
+    }    
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background-color: #1e1b1b;
+    font-family: "Poppins", sans-serif;
+}
+
+.pagina {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1rem;
+}
+
+
+.fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Limelight", sans-serif;
+    font-size: 20rem;
+    color: #2a2424;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 0;
+    line-height: 1;
+}
+
+.cadastro {
+    position: relative;
+    z-index: 1;
+    background-color: #111010;
+    border: 1px solid #2a2424;
+    border-top: 3px solid #aa1111;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+
+.cadastro-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+    font-family: "Limelight", sans-serif;
+    font-size: 1.4rem;
+    color: #fdf6f0;
+    letter-spacing: 0.05em;
+}
+
+.logo span {
+    color: #c2682d;
+}
+
+.titulo-pagina {
+    font-family: "Limelight", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fdf6f0;
+}
+
+
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.texto-formulario {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #c9b8ad;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.entrada {
+    background-color: #2a2424;
+    border: 1px solid #332c2c;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    color: #fdf6f0;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.entrada::placeholder {
+    color: #645a5b;
+}
+
+.entrada:focus {
+    border-color: #e4ad17;
+}
+
+
+.botão-cadastro {
+    background-color: #aa1111;
+    color: #fdf6f0;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.25rem;
+    width: 100%;
+}
+
+.botão-cadastro:hover {
+    background-color: #8a0d0d;
+}
+
+.botão-cadastro:active {
+    transform: scale(0.98);
+}
+
+
+.footer {
+    font-size: 0.82rem;
+    color: #645a5b;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.footer a {
+    color: #e4ad17;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: #ffba20;
+}
+
+.mensagem{
+    color: #aa1111;
+}
