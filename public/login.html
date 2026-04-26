@@ -1,0 +1,84 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Cadastro.css">
+</head>
+<body>
+    
+
+    <main class="pagina">
+
+     <div class="fundo">ROCK</div>
+
+     <div class="cadastro">
+        <div class="cadastro-titulo">
+            <p class="logo"><span>ROCK</span>BASE</p>
+            <h1 class="titulo-pagina">Entrar na conta</h1> 
+        </div>
+
+     <div class="formulario-cadastro">
+            <label for="ipt_email" class="texto-formulario" >Digite o seu email:</label>
+                <input class="entrada" type="email" id="ipt_email" placeholder="abc@dominio.com">
+        </div>
+        <div class="formulario-cadastro">
+            <label for="ipt_senha" class="texto-formulario" >Digite a sua senha:</label>
+            <input class="entrada" type="password" id="ipt_senha" placeholder="No minimo 6 caracteres:">
+        </div>
+
+         <button class="botão-cadastro" onclick="entrar()">Logar</button>
+
+         <p class="footer">Não tem uma conta? <a href="Cadastro.html">Cadastrar-se</a></p>
+
+                <div class="mensagem" id="mensagem"></div>
+
+
+        </div>
+    </main>
+
+    <script>
+
+    function entrar() {
+    let EmailVar = document.getElementById("ipt_email").value
+    let SenhaVar = document.getElementById("ipt_senha").value
+    let mensagem = document.getElementById("mensagem")
+    let validado = true  
+
+    if (EmailVar == "" || SenhaVar == "") {
+        mensagem.innerHTML = "Não deixe espaços em branco"
+        validado = false
+    } else if (!EmailVar.includes('@') || !EmailVar.includes('.')) {
+        mensagem.innerHTML = "O email está escrito errado"
+        validado = false
+    }
+
+    if (validado === true) {  
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                emailServer: EmailVar,
+                senhaServer: SenhaVar
+            })
+        }).then(function(resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    sessionStorage.EMAIL_USUARIO = json.email
+                    sessionStorage.NOME_USUARIO = json.nome
+                    setTimeout(() => window.location = "index.html", 1000)
+                })
+            } else {
+                resposta.text().then(texto => {
+                    mensagem.innerHTML = texto  // exibe "Email e/ou senha inválido(s)"
+                })
+            }
+        }).catch(erro => console.log(erro))
+    }
+
+    return false
+}
+    </script>
+</body>
+</html>

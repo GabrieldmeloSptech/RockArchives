@@ -1,5 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Sekuya&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 .navbar-logo {
+     font-family: "Sekuya", system-ui;
   font-size: 1.4rem;
   font-weight: 700;
   color: #fdf6f0;
@@ -44,12 +53,14 @@
 }
 
 .banda-painel__info {
+    font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .banda-painel__genero {
+    font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: #aa1111;
@@ -58,6 +69,7 @@
 }
 
 .banda-painel__nome {
+    font-family: "Poppins", sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: #fdf6f0;
@@ -65,12 +77,14 @@
 }
 
 .banda-painel__meta {
+    font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   color: #645a5b;
   letter-spacing: 0.04em;
 }
 
 .banda-painel__desc {
+    font-family: "Poppins", sans-serif;
   font-size: 0.95rem;
   color: #c9b8ad;
   line-height: 1.8;
@@ -78,6 +92,7 @@
 }
 
 .banda-painel__tags {
+    font-family: "Poppins", sans-serif;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -85,6 +100,7 @@
 }
 
 .banda-tag {
+    font-family: "Poppins", sans-serif;
   font-size: 0.72rem;
   color: #ffba20;
   background: rgba(255, 186, 32, 0.08);
@@ -96,6 +112,7 @@
 
 
 .section-title {
+    font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #fdf6f0;
@@ -106,6 +123,7 @@
 
 
 .integrantes {
+    font-family: "Poppins", sans-serif;
   padding: 50px 10%;
   background-color: #1e1b1b;
   border-bottom: 1px solid #2a2424;
@@ -119,6 +137,7 @@
 }
 
 .membro-card {
+    font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +154,7 @@
 }
 
 .membro-card__foto-wrap {
+    font-family: "Poppins", sans-serif;
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -151,6 +171,7 @@
 }
 
 .membro-card__nome {
+    font-family: "Poppins", sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   color: #fdf6f0;
@@ -158,6 +179,7 @@
 }
 
 .membro-card__instrumento {
+    font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   color: #645a5b;
   text-align: center;
@@ -166,11 +188,13 @@
 
 
 .albuns {
+    font-family: "Poppins", sans-serif;
   padding: 50px 10%;
   background-color: #1e1b1b;
 }
 
 .albuns__carousel {
+    font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -196,8 +220,8 @@
 
 
 .flip-card {
-  width: 180px;
-  height: 240px;
+  width: 190px;
+  height: 250px;
   flex-shrink: 0;
   perspective: 1000px;
   cursor: pointer;
@@ -239,6 +263,7 @@
 }
 
 .flip-card__titulo {
+    font-family: "Poppins", sans-serif;
   padding: 10px 12px;
   font-size: 0.82rem;
   font-weight: 600;
@@ -250,6 +275,7 @@
 
 
 .flip-card__verso {
+    font-family: "Poppins", sans-serif;
   background-color: #aa1111;
   transform: rotateY(180deg);
   display: flex;
@@ -261,6 +287,7 @@
 }
 
 .flip-card__verso-titulo {
+    font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: #fdf6f0;
@@ -268,6 +295,7 @@
 }
 
 .flip-card__verso-ano {
+    font-family: "Poppins", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   color: rgba(253, 246, 240, 0.6);
@@ -275,19 +303,22 @@
 }
 
 .flip-card__verso-desc {
-  font-size: 0.78rem;
+    font-family: "Poppins", sans-serif;
+  font-size: 0.70rem;
   color: rgba(253, 246, 240, 0.85);
   line-height: 1.6;
 }
 
 
 .footer-logo {
+    font-family: "Sekuya", system-ui;
   font-size: 1.4rem;
   font-weight: 700;
   color: #fdf6f0;
 }
 
 .footer-logo span {
+    
   color: #ffba20;
 }
 

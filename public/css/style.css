@@ -109,7 +109,7 @@ font{
 }
 
 .showcase{
-    background-image: url(./Assets/Maisumvinil.jpg);
+    background-image: url(../assets/Vinilfundo.jpg);
     background-size: cover;
     height: 99vh;
     display: flex;
