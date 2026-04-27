@@ -74,7 +74,7 @@ font{
 
 #navbar .navbar-container {
     gap: 5px;
-    width: 60%;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content:space-between;
