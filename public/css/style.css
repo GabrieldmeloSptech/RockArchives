@@ -24,8 +24,10 @@ title {
 
 .Logo{
     font-family: "Sekuya", system-ui;
-    font-size:xx-large;
-
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fdf6f0;
+  text-decoration: none;
 }
 
 
@@ -88,6 +90,7 @@ font{
     display: flex;
     list-style: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 

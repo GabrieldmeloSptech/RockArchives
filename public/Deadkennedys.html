@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <navbar id="navbar">
@@ -25,21 +27,17 @@
 
   <section class="banda-painel">
     <div class="banda-painel__img-wrap">
-      <img
-        src="./Assets/deadkennedys_capa.jpg"
-        alt="Dead Kennedys"
-        class="banda-painel__img"
-      />
+      <img src="./Assets/deadkennedys_capa.jpg" alt="Dead Kennedys" class="banda-painel__img" />
     </div>
     <div class="banda-painel__info">
       <span class="banda-painel__genero">Punk Rock</span>
       <h1 class="banda-painel__nome">Dead Kennedys</h1>
       <p class="banda-painel__meta">1978 · San Francisco, Califórnia, EUA · Encerrada em 1986</p>
       <p class="banda-painel__desc">
-        Dead Kennedys foi uma banda americana de hardcore punk formada em San Francisco 
-        em 1978. Conhecida por suas letras politicamente satíricas e críticas ao governo 
-        americano, capitalismo e cultura pop, a banda foi uma das mais influentes do 
-        movimento punk dos anos 80. O vocalista Jello Biafra se tornou um dos maiores 
+        Dead Kennedys foi uma banda americana de hardcore punk formada em San Francisco
+        em 1978. Conhecida por suas letras politicamente satíricas e críticas ao governo
+        americano, capitalismo e cultura pop, a banda foi uma das mais influentes do
+        movimento punk dos anos 80. O vocalista Jello Biafra se tornou um dos maiores
         ativistas políticos do punk rock.
       </p>
       <div class="banda-painel__tags">
@@ -102,7 +100,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Dead Kennedys</span>
             <span class="flip-card__verso-ano">1980</span>
-            <p class="flip-card__verso-desc">Álbum de estreia e um dos mais importantes do hardcore punk. Contém California Über Alles e Holiday in Cambodia, críticas ferozes à política americana.</p>
+            <p class="flip-card__verso-desc">Álbum de estreia e um dos mais importantes do hardcore punk. Contém
+              California Über Alles e Holiday in Cambodia, críticas ferozes à política americana.</p>
           </div>
         </div>
       </div>
@@ -116,7 +115,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Dead Kennedys</span>
             <span class="flip-card__verso-ano">1982</span>
-            <p class="flip-card__verso-desc">Segundo álbum, com críticas ainda mais afiadas ao consumismo e à cirurgia plástica como símbolo da superficialidade americana.</p>
+            <p class="flip-card__verso-desc">Segundo álbum, com críticas ainda mais afiadas ao consumismo e à cirurgia
+              plástica como símbolo da superficialidade americana.</p>
           </div>
         </div>
       </div>
@@ -130,7 +130,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Dead Kennedys</span>
             <span class="flip-card__verso-ano">1985</span>
-            <p class="flip-card__verso-desc">Álbum mais experimental da banda, que causou polêmica pela arte inclusa no encarte. A banda foi levada a julgamento por "distribuição de material obsceno".</p>
+            <p class="flip-card__verso-desc">Álbum mais experimental da banda, que causou polêmica pela arte inclusa no
+              encarte. A banda foi levada a julgamento por "distribuição de material obsceno".</p>
           </div>
         </div>
       </div>
@@ -144,13 +145,36 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Dead Kennedys</span>
             <span class="flip-card__verso-ano">1986</span>
-            <p class="flip-card__verso-desc">Último álbum antes da dissolução. Lançado como despedida, critica o movimento punk que havia se tornado comercial e perdido sua essência rebelde.</p>
+            <p class="flip-card__verso-desc">Último álbum antes da dissolução. Lançado como despedida, critica o
+              movimento punk que havia se tornado comercial e perdido sua essência rebelde.</p>
           </div>
         </div>
       </div>
 
     </div>
   </section>
+
+
+  <section>
+    <div class="quiz">
+      <p id="Texto-pergunta" class="Texto-pergunta">Lorem Ipsum</p>
+      <p id="perguntaatual"></p>
+      <button class="quiz-botao" id="b1" onclick="Responder(0)">Resposta1</button>
+      <button class="quiz-botao" id="b2" onclick="Responder(1)">Resposta2</button>
+      <button class="quiz-botao" id="b3" onclick="Responder(2)">Resposta3</button>
+      <button class="quiz-botao" id="b4" onclick="Responder(3)">Resposta4</button>
+
+      <p id="feedback" class="feedback"></p>
+
+      <p id="fim"></p>
+      <button id="btn-reiniciar" onclick="Reiniciar()" style="display:none">Jogar novamente</button>
+    </div>
+
+  </section>
+
+
+
+
 
   <footer id="footer">
     <div class="footer-content">
@@ -171,6 +195,126 @@
       <p>Projeto Individual — SP Tech School 2026 · Gabriel Fernandes Gonzalez de Melo</p>
     </div>
   </footer>
+  <script>
+
+    var perguntas = [
+      {
+        pergunta: "Em que cidade o Nirvana foi formado?",
+        resposta: ["Seattle", "Aberdeen", "Portland", "San Francisco"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Qual foi o segundo álbum de estúdio do Nirvana?",
+        resposta: ["Bleach", "In Utero", "Nevermind", "Incesticide"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Quem era o baterista do Nirvana?",
+        resposta: ["Chad Channing", "Dave Grohl", "Aaron Burckhard", "Dan Peters"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Em que ano o Nirvana lançou Nevermind?",
+        resposta: ["1989", "1990", "1991", "1992"],
+        idcorreta: 2
+      },
+      {
+        pergunta: "Qual o nome da gravadora independente que lançou o primeiro álbum do Nirvana?",
+        resposta: ["DGC Records", "Sub Pop", "Geffen", "Epitaph"],
+        idcorreta: 1
+      }
+
+    ]
+
+    if (localStorage.getItem('logado') !== 'true') {
+      alert('Entre em sua conta para continuar.')
+      window.location.href = 'login.html'
+    }
+
+    var pontos = 0
+    var perguntaAtual = 0
+
+    function RenderizarPergunta(params) {
+      var p = perguntas[perguntaAtual]
+      document.getElementById('perguntaatual').textContent = 'Pergunta: ' + (perguntaAtual + 1) + ' de ' + perguntas.length
+      document.getElementById("Texto-pergunta").textContent = p.pergunta
+
+      document.getElementById('b1').textContent = p.resposta[0]
+      document.getElementById('b2').textContent = p.resposta[1]
+      document.getElementById('b3').textContent = p.resposta[2]
+      document.getElementById('b4').textContent = p.resposta[3]
+
+      document.getElementById('feedback').textContent = ''
+      var botoes = document.querySelectorAll('.quiz-botao')
+      document.getElementById('btn-reiniciar').style.display = 'none';
+      for (let i = 0; i < botoes.length; i++) {
+        botoes[i].disabled = false
+
+      }
+
+
+
+    }
+    RenderizarPergunta()
+
+
+    function Responder(params) {
+
+      if (perguntaAtual >= perguntas.length) return
+
+      var p = perguntas[perguntaAtual]
+      let situacao = ''
+      if (params == p.idcorreta) {
+
+        pontos += 20
+        document.getElementById('feedback').innerHTML = `<span style="color: green;">Correto! Pontos: ${pontos}</span>`
+      } else {
+        document.getElementById('feedback').innerHTML = `<span style="color: red;">Errado Paezão! Pontos: ${pontos}</span>`
+      }
+
+
+      var botoes = document.querySelectorAll('.quiz-botao')
+
+      for (let i = 0; i < botoes.length; i++) {
+        botoes[i].disabled = true
+
+      }
+
+      perguntaAtual++
+
+
+
+      if (perguntaAtual < perguntas.length) {
+        setTimeout(RenderizarPergunta, 3000)
+
+      } else {
+
+        if (pontos < 60) {
+          situacao = `<span style="color: red;">Perdeu Irmão infelizmente, mas tenta denovo quem sabe!</span>`
+        } else {
+          situacao = '<span style="color: green;">Parabéns você ganhou!</span>'
+        }
+        document.getElementById('fim').innerHTML = 'Fim do quiz! Pontos: ' + pontos + ' ' + situacao
+        document.getElementById('btn-reiniciar').style.display = 'block'
+      }
+
+    }
+
+    function Reiniciar(params) {
+      perguntaAtual = 0;
+      pontos = 0
+      document.getElementById('fim').innerHTML = ''
+      document.getElementById('feedback').innerHTML = ''
+      RenderizarPergunta()
+    }
+
+  </script>
+
+
+
+
+
 
 </body>
+
 </html>

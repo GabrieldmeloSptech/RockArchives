@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <navbar id="navbar">
@@ -25,20 +27,16 @@
 
   <section class="banda-painel">
     <div class="banda-painel__img-wrap">
-      <img
-        src="./Assets/korn_capa.jpg"
-        alt="Korn"
-        class="banda-painel__img"
-      />
+      <img src="./Assets/korn_capa.jpg" alt="Korn" class="banda-painel__img" />
     </div>
     <div class="banda-painel__info">
       <span class="banda-painel__genero">Nu Metal</span>
       <h1 class="banda-painel__nome">Korn</h1>
       <p class="banda-painel__meta">1993 · Bakersfield, Califórnia, EUA · Em atividade</p>
       <p class="banda-painel__desc">
-        Korn é uma banda americana de nu metal formada em Bakersfield, Califórnia, em 1993. 
-        Pioneiros do nu metal, a banda mistura elementos de metal alternativo, hip hop e música 
-        eletrônica. Com mais de 40 milhões de discos vendidos, são um dos grupos mais influentes 
+        Korn é uma banda americana de nu metal formada em Bakersfield, Califórnia, em 1993.
+        Pioneiros do nu metal, a banda mistura elementos de metal alternativo, hip hop e música
+        eletrônica. Com mais de 40 milhões de discos vendidos, são um dos grupos mais influentes
         dos anos 90 e 2000, conhecidos por letras que abordam traumas, abuso e angústia.
       </p>
       <div class="banda-painel__tags">
@@ -109,7 +107,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Korn</span>
             <span class="flip-card__verso-ano">1994</span>
-            <p class="flip-card__verso-desc">Álbum de estreia que definiu o som do nu metal. Letras cruas sobre traumas de infância e abuso, com o clássico Blind abrindo o disco.</p>
+            <p class="flip-card__verso-desc">Álbum de estreia que definiu o som do nu metal. Letras cruas sobre traumas
+              de infância e abuso, com o clássico Blind abrindo o disco.</p>
           </div>
         </div>
       </div>
@@ -123,7 +122,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Korn</span>
             <span class="flip-card__verso-ano">1996</span>
-            <p class="flip-card__verso-desc">Segundo álbum, mais agressivo e experimental. Produzido por Ross Robinson, consolidou a banda como líderes do nu metal com faixas como A.D.I.D.A.S.</p>
+            <p class="flip-card__verso-desc">Segundo álbum, mais agressivo e experimental. Produzido por Ross Robinson,
+              consolidou a banda como líderes do nu metal com faixas como A.D.I.D.A.S.</p>
           </div>
         </div>
       </div>
@@ -137,7 +137,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Korn</span>
             <span class="flip-card__verso-ano">1998</span>
-            <p class="flip-card__verso-desc">Álbum que catapultou a banda ao estrelato mundial. Com Got the Life e Freak on a Leash, vendeu mais de 10 milhões de cópias.</p>
+            <p class="flip-card__verso-desc">Álbum que catapultou a banda ao estrelato mundial. Com Got the Life e Freak
+              on a Leash, vendeu mais de 10 milhões de cópias.</p>
           </div>
         </div>
       </div>
@@ -151,7 +152,8 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Korn</span>
             <span class="flip-card__verso-ano">1999</span>
-            <p class="flip-card__verso-desc">Quarto álbum, estreou em primeiro lugar na Billboard 200. Mais melódico que os anteriores, com Make Me Bad e Falling Away from Me como destaques.</p>
+            <p class="flip-card__verso-desc">Quarto álbum, estreou em primeiro lugar na Billboard 200. Mais melódico que
+              os anteriores, com Make Me Bad e Falling Away from Me como destaques.</p>
           </div>
         </div>
       </div>
@@ -165,13 +167,35 @@
           <div class="flip-card__verso">
             <span class="flip-card__verso-titulo">Korn</span>
             <span class="flip-card__verso-ano">2002</span>
-            <p class="flip-card__verso-desc">Álbum mais produzido da banda, custou mais de 10 milhões de dólares para ser gravado. Aqui a Korn experimenta com orquestra e elementos eletrônicos.</p>
+            <p class="flip-card__verso-desc">Álbum mais produzido da banda, custou mais de 10 milhões de dólares para
+              ser gravado. Aqui a Korn experimenta com orquestra e elementos eletrônicos.</p>
           </div>
         </div>
       </div>
 
     </div>
   </section>
+
+
+  <section>
+    <div class="quiz">
+      <p id="Texto-pergunta" class="Texto-pergunta">Lorem Ipsum</p>
+      <p id="perguntaatual"></p>
+      <button class="quiz-botao" id="b1" onclick="Responder(0)">Resposta1</button>
+      <button class="quiz-botao" id="b2" onclick="Responder(1)">Resposta2</button>
+      <button class="quiz-botao" id="b3" onclick="Responder(2)">Resposta3</button>
+      <button class="quiz-botao" id="b4" onclick="Responder(3)">Resposta4</button>
+
+      <p id="feedback" class="feedback"></p>
+
+      <p id="fim"></p>
+      <button id="btn-reiniciar" onclick="Reiniciar()" style="display:none">Jogar novamente</button>
+    </div>
+
+  </section>
+
+
+
 
   <footer id="footer">
     <div class="footer-content">
@@ -193,5 +217,132 @@
     </div>
   </footer>
 
+
+  <script>
+
+    var perguntas = [
+      {
+        pergunta: "Em que cidade o Nirvana foi formado?",
+        resposta: ["Seattle", "Aberdeen", "Portland", "San Francisco"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Qual foi o segundo álbum de estúdio do Nirvana?",
+        resposta: ["Bleach", "In Utero", "Nevermind", "Incesticide"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Quem era o baterista do Nirvana?",
+        resposta: ["Chad Channing", "Dave Grohl", "Aaron Burckhard", "Dan Peters"],
+        idcorreta: 1
+      },
+      {
+        pergunta: "Em que ano o Nirvana lançou Nevermind?",
+        resposta: ["1989", "1990", "1991", "1992"],
+        idcorreta: 2
+      },
+      {
+        pergunta: "Qual o nome da gravadora independente que lançou o primeiro álbum do Nirvana?",
+        resposta: ["DGC Records", "Sub Pop", "Geffen", "Epitaph"],
+        idcorreta: 1
+      }
+
+    ]
+
+
+    if (localStorage.getItem('logado') !== 'true') {
+      alert('Entre em sua conta para continuar.')
+      window.location.href = 'login.html'
+    }
+
+    var pontos = 0
+    var perguntaAtual = 0
+
+    function RenderizarPergunta(params) {
+      var p = perguntas[perguntaAtual]
+      document.getElementById('perguntaatual').textContent = 'Pergunta: ' + (perguntaAtual + 1) + ' de ' + perguntas.length
+      document.getElementById("Texto-pergunta").textContent = p.pergunta
+
+      document.getElementById('b1').textContent = p.resposta[0]
+      document.getElementById('b2').textContent = p.resposta[1]
+      document.getElementById('b3').textContent = p.resposta[2]
+      document.getElementById('b4').textContent = p.resposta[3]
+
+      document.getElementById('feedback').textContent = ''
+      var botoes = document.querySelectorAll('.quiz-botao')
+      document.getElementById('btn-reiniciar').style.display = 'none';
+      for (let i = 0; i < botoes.length; i++) {
+        botoes[i].disabled = false
+
+      }
+
+
+
+    }
+    RenderizarPergunta()
+
+
+    function Responder(params) {
+
+      if (perguntaAtual >= perguntas.length) return
+
+      var p = perguntas[perguntaAtual]
+      let situacao = ''
+      if (params == p.idcorreta) {
+
+        pontos += 20
+        document.getElementById('feedback').innerHTML = `<span style="color: green;">Correto! Pontos: ${pontos}</span>`
+      } else {
+        document.getElementById('feedback').innerHTML = `<span style="color: red;">Errado Paezão! Pontos: ${pontos}</span>`
+      }
+
+
+      var botoes = document.querySelectorAll('.quiz-botao')
+
+      for (let i = 0; i < botoes.length; i++) {
+        botoes[i].disabled = true
+
+      }
+
+      perguntaAtual++
+
+
+
+      if (perguntaAtual < perguntas.length) {
+        setTimeout(RenderizarPergunta, 3000)
+
+      } else {
+
+        if (pontos < 60) {
+          situacao = `<span style="color: red;">Perdeu Irmão infelizmente, mas tenta denovo quem sabe!</span>`
+        } else {
+          situacao = '<span style="color: green;">Parabéns você ganhou!</span>'
+        }
+        document.getElementById('fim').innerHTML = 'Fim do quiz! Pontos: ' + pontos + ' ' + situacao
+        document.getElementById('btn-reiniciar').style.display = 'block'
+      }
+
+    }
+
+    function Reiniciar(params) {
+      perguntaAtual = 0;
+      pontos = 0
+      document.getElementById('fim').innerHTML = ''
+      document.getElementById('feedback').innerHTML = ''
+      RenderizarPergunta()
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>

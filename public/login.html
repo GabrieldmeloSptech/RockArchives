@@ -68,6 +68,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email
                     sessionStorage.NOME_USUARIO = json.nome
                     setTimeout(() => window.location = "index.html", 1000)
+                    localStorage.setItem('logado', 'true')
                 })
             } else {
                 resposta.text().then(texto => {

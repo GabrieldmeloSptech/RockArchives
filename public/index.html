@@ -1,159 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rockbase - Não deixe o rock sair de você</title>
-    
+
     <link rel="stylesheet" href="./css/style.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
+
 <body>
     <navbar id="navbar">
         <div class="navbar-container">
             <div class="Logo">
-                <a href="#home"><p><span style="color:#c2682d;">ROCK</span>BASE</p></a>
+                <a href="#home">
+                    <p>ROCK<span style="color: #ffbb00;">BASE</span>
+                </a>
             </div>
-            
+
             <ul>
-                <a href="cadastro.html"><li class="navbar-item">Cadastrar-se</li></a>
-                <a href="Login.html"><li class="navbar-item">Entrar</li></a>
-                <a href="#SobreMim"><li class="navbar-item">Sobre mim</li></a>
+                <a href="cadastro.html">
+                    <li class="navbar-item">Cadastrar-se</li>
+                </a>
+                <a href="Login.html">
+                    <li class="navbar-item">Entrar</li>
+                </a>
+                <a href="#SobreMim">
+                    <li class="navbar-item">Sobre mim</li>
+                </a>
                 <li class="navbar-item">Dashboard</li>
                 <li class="navbar-item">Agradecimentos</li>
+                <li class="navbar-item"><div id="ola"></div></li>
+                <li onclick="Sair()" class="navbar-item">Logout</li>
             </ul>
         </div>
     </navbar>
 
     <div id="home" class="showcase">
-         <div class="showcase-container">
+        <div class="showcase-container">
             <div class="typing-effect">
-            <h2>Não deixe o rock sair de você.</h2>
+                <h2>Não deixe o rock sair de você.</h2>
             </div>
             <p>MAIS DO QUE MÚSICA, UM ESTILO DE VIDA.</p>
             <a href="#1"><button class="btn-primary">Conheça o meu projeto!</button></a>
-         </div>
-    </div>    
-    <section id="1" class="historia">
-    <div  class="Rock-painel">
-        <div class="Rock-historia">
-            <img src="./Assets/Master of reality Black Sabbath.jpg" alt="">
-    <div class="historia-texto">
-        <h2>A História do Rock</h2>
-        <p>O estilo musical rock surgiu nos Estados Unidos na década de 50. Sua origem está relacionada ao momento em que alguns músicos passaram a tocar guitarra elétrica nas suas apresentações e os vocalistas a cantarem as músicas com vozes mais impactantes.</p>
-       <div class="citacao"><p>O rock'n'roll é o maior amor da minha vida, pois foi através dele que cheguei a todos os outros. <span class="autorc">Ozzy Ousborne</span></p></div>
-<p>O então novo estilo musical foi propagado nos anos 1950 graças aos jovens, que rapidamente se encantaram com seu ritmo vibrante e cheio de energia. Outro ponto ligado à origem do rock são as letras das músicas que, na época, contestavam o sistema político e cultural dos Estados Unidos.</p>
-    </div>
-</div> 
-</div>
-</section>
-
-<div class="bandas-section">
-    <div class="bandas-header">
-        <h2>Explorar por bandas</h2>
-        <a href="bandas.html">Ver todos</a>
-    </div>
-    <div class="bandas-carousel">
-
-        <a href="BlackSabbath.html" class="banda-card">
-            <img src="./Assets/Sabbath Bloody Sabbath.jpg" alt="Heavy Metal">
-            <span class="banda-card__nome">Black Sabbath</span>
-            <span class="banda-card__genero">Heavy Metal</span>
-        </a>
-
-        <a href="Nirvana.html" class="banda-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg" alt="Grunge">
-            <span class="banda-card__nome">Nirvana</span>
-            <span class="banda-card__genero">Grunge</span>
-        </a>
-
-        <a href="Marilyn.html" class="banda-card">
-            <img src="./Assets/Marilyn_Manson_-_Holy_Wood.png" alt="Gothic">
-            <span class="banda-card__nome">Marilyn Manson</span>
-            <span class="banda-card__genero">Gothic</span>
-        </a>
-
-        <a href="Ledzeppelin.html" class="banda-card">
-            <img src="./Assets/Led Zeppelin - Physical Grafitti.jpg" alt="Classic">
-            <span class="banda-card__nome">Led Zeppelin</span>
-            <span class="banda-card__genero">Classic</span>
-        </a>
-
-        <a href="Korn.html" class="banda-card">
-            <img src="./Assets/Korn Follow the Leader.jpg" alt="Rock Clássico">
-            <span class="banda-card__nome">Korn</span>
-            <span class="banda-card__genero">Nu Metal</span>
-        </a>
-
-        <a href="Metallica.html" class="banda-card">
-            <img src="./Assets/Kill Em All.jpg" alt="Thrash Metal">
-            <span class="banda-card__nome">Metallica</span>
-            <span class="banda-card__genero">Thrash Metal</span>
-        </a>
-
-         <a href="Deadkennedys.html" class="banda-card">
-            <img src="./Assets/Bedtime in democracy.jpg" alt="Punk">
-            <span class="banda-card__nome">Dead Kennedys</span>
-            <span class="banda-card__genero">Punk</span>
-        </a>
-
-
-    </div>
-</div>
-
-<section id="SobreMim" class="sobre-mim">
-<div class="sobre">
-    <div class="sobre-gif">
-        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXNnMzhnMnZhZzVkMmh2bzQzYTVkbXdtN3Bmc3RrdzV4aWs5a3NseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wCnNkiK7TpfCfZU5R6/giphy.gif" alt="Gifzinho">
-    </div>
-    <div class= "sobre-conteudo">
-        <p class="sobre-titulo">RockBase</p>
-        <p class="sobre-subtitulo"> Sobre o projeto</p>
-        <p class="sobre-p">
-            O projeto retrata a minha paixão por rock, e minha curiosidade em saber as histórias e das curiosidades das minhas bandas preferidas. E também possui o propósito de introduzir pessoas indoutas no mundo do rock de maneira interativa.
-        </p>
-    
-    <div class="sobre-divisoria"></div>
-
-    <p class="sobre-titulo">Sobre mim</p>
-    <div class="sobre-autor">
-        <div class="sobre-avatar"></div>
-        <div class="sobre-autor-info">
-        <span class="sobre-autor-nome">Gabriel Fernandes</span>
-        <span class="sobre-autor-desc">Aluno Sptech School</span>
         </div>
     </div>
-</div>
-</div>
-</section>
+    <section id="1" class="historia">
+        <div class="Rock-painel">
+            <div class="Rock-historia">
+                <img src="./Assets/Master of reality Black Sabbath.jpg" alt="">
+                <div class="historia-texto">
+                    <h2>A História do Rock</h2>
+                    <p>O estilo musical rock surgiu nos Estados Unidos na década de 50. Sua origem está relacionada ao
+                        momento em que alguns músicos passaram a tocar guitarra elétrica nas suas apresentações e os
+                        vocalistas a cantarem as músicas com vozes mais impactantes.</p>
+                    <div class="citacao">
+                        <p>O rock'n'roll é o maior amor da minha vida, pois foi através dele que cheguei a todos os
+                            outros. <span class="autorc">Ozzy Ousborne</span></p>
+                    </div>
+                    <p>O então novo estilo musical foi propagado nos anos 1950 graças aos jovens, que rapidamente se
+                        encantaram com seu ritmo vibrante e cheio de energia. Outro ponto ligado à origem do rock são as
+                        letras das músicas que, na época, contestavam o sistema político e cultural dos Estados Unidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <div class="bandas-section">
+        <div class="bandas-header">
+            <h2>Explorar por bandas</h2>
+            <a href="bandas.html">Ver todos</a>
+        </div>
+        <div class="bandas-carousel">
 
-  <footer id="footer">
-    <div class="footer-content">
-      <p class="Logo"><span style="color: #c2682d;">Rock</span>Base</p>
-      <ul class="footer-menu">
-        <p>Navegar</p>
-        <li class="footer-menu-item"><a href="index.html">Home</a></li>
-        <li class="footer-menu-item"><a href="bandas.html">Bandas</a></li>
-        <li class="footer-menu-item"><a href="dashboard.html">Dashboard</a></li>
-      </ul>
-      <ul class="footer-menu">
-        <p>Conta</p>
-        <li class="footer-menu-item"><a href="Login.html">Entrar</a></li>
-        <li class="footer-menu-item"><a href="Cadastro.html">Cadastrar</a></li>
-      </ul>
+            <a href="BlackSabbath.html" class="banda-card">
+                <img src="./Assets/Sabbath Bloody Sabbath.jpg" alt="Heavy Metal">
+                <span class="banda-card__nome">Black Sabbath</span>
+                <span class="banda-card__genero">Heavy Metal</span>
+            </a>
+
+            <a href="Nirvana.html" class="banda-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg" alt="Grunge">
+                <span class="banda-card__nome">Nirvana</span>
+                <span class="banda-card__genero">Grunge</span>
+            </a>
+
+            <a href="Marilyn.html" class="banda-card">
+                <img src="./Assets/Marilyn_Manson_-_Holy_Wood.png" alt="Gothic">
+                <span class="banda-card__nome">Marilyn Manson</span>
+                <span class="banda-card__genero">Gothic</span>
+            </a>
+
+            <a href="Ledzeppelin.html" class="banda-card">
+                <img src="./Assets/Led Zeppelin - Physical Grafitti.jpg" alt="Classic">
+                <span class="banda-card__nome">Led Zeppelin</span>
+                <span class="banda-card__genero">Classic</span>
+            </a>
+
+            <a href="Korn.html" class="banda-card">
+                <img src="./Assets/Korn Follow the Leader.jpg" alt="Rock Clássico">
+                <span class="banda-card__nome">Korn</span>
+                <span class="banda-card__genero">Nu Metal</span>
+            </a>
+
+            <a href="Metallica.html" class="banda-card">
+                <img src="./Assets/Kill Em All.jpg" alt="Thrash Metal">
+                <span class="banda-card__nome">Metallica</span>
+                <span class="banda-card__genero">Thrash Metal</span>
+            </a>
+
+            <a href="Deadkennedys.html" class="banda-card">
+                <img src="./Assets/Bedtime in democracy.jpg" alt="Punk">
+                <span class="banda-card__nome">Dead Kennedys</span>
+                <span class="banda-card__genero">Punk</span>
+            </a>
+
+
+        </div>
     </div>
-    <div class="footer-info">
-      <p>Projeto Individual — SP Tech School 2026 · Gabriel Fernandes Gonzalez de Melo</p>
+
+    <section id="SobreMim" class="sobre-mim">
+        <div class="sobre">
+            <div class="sobre-gif">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXNnMzhnMnZhZzVkMmh2bzQzYTVkbXdtN3Bmc3RrdzV4aWs5a3NseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wCnNkiK7TpfCfZU5R6/giphy.gif"
+                    alt="Gifzinho">
+            </div>
+            <div class="sobre-conteudo">
+                <p class="sobre-titulo">RockBase</p>
+                <p class="sobre-subtitulo"> Sobre o projeto</p>
+                <p class="sobre-p">
+                    O projeto retrata a minha paixão por rock, e minha curiosidade em saber as histórias e das
+                    curiosidades das minhas bandas preferidas. E também possui o propósito de introduzir pessoas
+                    indoutas no mundo do rock de maneira interativa.
+                </p>
+
+                <div class="sobre-divisoria"></div>
+
+                <p class="sobre-titulo">Sobre mim</p>
+                <div class="sobre-autor">
+                    <div class="sobre-avatar"></div>
+                    <div class="sobre-autor-info">
+                        <span class="sobre-autor-nome">Gabriel Fernandes</span>
+                        <span class="sobre-autor-desc">Aluno Sptech School</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </div>
-  </footer>     
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p class="Logo">Rock<span style="color: #fbff00;">Base</span></p>
+            <ul class="footer-menu">
+                <p>Navegar</p>
+                <li class="footer-menu-item"><a href="index.html">Home</a></li>
+                <li class="footer-menu-item"><a href="bandas.html">Bandas</a></li>
+                <li class="footer-menu-item"><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <ul class="footer-menu">
+                <p>Conta</p>
+                <li class="footer-menu-item"><a href="Login.html">Entrar</a></li>
+                <li class="footer-menu-item"><a href="Cadastro.html">Cadastrar</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <p>Projeto Individual — SP Tech School 2026 · Gabriel Fernandes Gonzalez de Melo</p>
+        </div>
+    </footer>
 </body>
 <script>
-
-
+    document.getElementById('ola').innerHTML =  'Olá ' + sessionStorage.NOME_USUARIO;
+        function Sair() {
+        localStorage.removeItem('logado')
+        window.location.href = 'index.html'
+    }
 
 </script>
+
 </html>
