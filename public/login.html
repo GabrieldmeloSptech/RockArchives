@@ -47,10 +47,10 @@
     let validado = true  
 
     if (EmailVar == "" || SenhaVar == "") {
-        mensagem.innerHTML = "Não deixe espaços em branco"
+        mensagem.innerHTML = "Email e/ou senha inválido(s)"
         validado = false
     } else if (!EmailVar.includes('@') || !EmailVar.includes('.')) {
-        mensagem.innerHTML = "O email está escrito errado"
+        mensagem.innerHTML = "Email e/ou senha inválido(s)"
         validado = false
     }
 
@@ -68,11 +68,12 @@
                     sessionStorage.EMAIL_USUARIO = json.email
                     sessionStorage.NOME_USUARIO = json.nome
                     setTimeout(() => window.location = "index.html", 1000)
+                    mensagem.innerHTML =  `Login feito com sucesso! redirecionando para a tela inicial.`
                     localStorage.setItem('logado', 'true')
                 })
             } else {
                 resposta.text().then(texto => {
-                    mensagem.innerHTML = texto  // exibe "Email e/ou senha inválido(s)"
+                    mensagem.innerHTML = "Email e/ou senha inválido(s)"
                 })
             }
         }).catch(erro => console.log(erro))

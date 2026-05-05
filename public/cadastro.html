@@ -1,144 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/Cadastro.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/Cadastro.css">
 </head>
+
 <body>
-    
-<main class="pagina">
+
+  <main class="pagina">
 
     <div class="fundo">ROCK</div>
 
     <div class="cadastro">
-        <div class="cadastro-titulo">
-            <p class="logo"><span>ROCK</span>BASE</p>
-            <h1 class="titulo-pagina">Criar conta</h1> 
-        </div>
+      <div class="cadastro-titulo">
+        <p class="logo"><span>ROCK</span>BASE</p>
+        <h1 class="titulo-pagina">Criar conta</h1>
+      </div>
 
-        <div class="formulario-cadastro">
-            <label for="ipt_nome"class="texto-formulario" >Nome Completo</label>
-            <input class="entrada" type="text" id="ipt_nome" placeholder="Digite o seu nome:">
-        </div>
+      <div class="formulario-cadastro">
+        <label for="ipt_nome" class="texto-formulario">Nome Completo</label>
+        <input class="entrada" type="text" id="ipt_nome" placeholder="Digite o seu nome:">
+        <div id="mensagemnome" class="mensagem"></div>
+        <div id="mensagemnome1" class="mensagem"></div>
+      </div>
 
-        <div class="formulario-cadastro">
-            <label for="ipt_email" class="texto-formulario" >Digite o seu email:</label>
-                <input class="entrada" type="email" id="ipt_email" placeholder="abc@dominio.com">
-        </div>
-        <div class="formulario-cadastro">
-            <label for="ipt_senha" class="texto-formulario" >Digite a sua senha:</label>
-            <input class="entrada" type="password" id="ipt_senha" placeholder="No minimo 6 caracteres:">
-        </div>
-        <div class="formulario-cadastro">
-            <label for="ipt_confirmar" class="texto-formulario" >Confirme a sua senha:</label>
-            <input class="entrada" type="password" id="ipt_confirmar" placeholder="Confirme a sua senha">
-        </div>
+      <div class="formulario-cadastro">
+        <label for="ipt_email" class="texto-formulario">Digite o seu email:</label>
+        <input class="entrada" type="email" id="ipt_email" placeholder="abc@dominio.com">
+        <div id="mensagememail" class="mensagem"></div>
+        <div id="mensagememail1" class="mensagem"></div>
+        <div id="mensagememail2" class="mensagem"></div>
+      </div>
+      <div class="formulario-cadastro">
+        <label for="ipt_senha" class="texto-formulario">Digite a sua senha:</label>
+        <input class="entrada" type="password" id="ipt_senha" placeholder="No minimo 6 caracteres:">
+        <div id="mensagemsenha" class="mensagem"></div>
+      </div>
+      <div class="formulario-cadastro">
+        <label for="ipt_confirmar" class="texto-formulario">Confirme a sua senha:</label>
+        <input class="entrada" type="password" id="ipt_confirmar" placeholder="Confirme a sua senha">
+        <div id="mensagemconfirmar" class="mensagem"></div>
+      </div>
 
-        <button class="botão-cadastro" onclick="Cadastrar()">Cadastrar</button>
+      <button class="botão-cadastro" onclick="Cadastrar()">Cadastrar</button>
 
-         <p class="footer">Já tem uma conta? <a href="Login.html"> Entrar</a></p>
+      <p class="footer">Já tem uma conta? <a href="login.html"> Entrar</a></p>
 
-                <div class="mensagem" id="mensagem"></div>
+      <div class="mensagem" id="mensagem"></div>
     </div>
-   
-</main>
-<script>
-    especiais = ['!','@','#','$','%','¨¨','&','*']
-    function Cadastrar(){
 
-       
-
-        let NomeVar = document.getElementById('ipt_nome').value;
-        let SenhaVar = document.getElementById('ipt_senha').value;
-        let ConfirmarVar = document.getElementById('ipt_confirmar').value;
-        let EmailVar = document.getElementById('ipt_email').value;
-        let validado = true
-        if(SenhaVar.length < 6){
-            mensagem.innerHTML = `A senha é muito fraca`
-            validado = false
-        }
-
-        for (let i = 0; i < especiais.length; i++) {
-            
-                if (NomeVar.includes(especiais[i])) {
-                    mensagem.innerHTML = `Só letras normais no nome`
-                    validado = false
-                }
-        }
-
-        if (NomeVar == '' || SenhaVar == '' || ConfirmarVar == '' || EmailVar == '' ) {
-            mensagem.innerHTML = `Não deixe nenhum espaço em branco`
-            validado = false
-        }
-
-       if (!EmailVar.includes('@') || !EmailVar.includes('.') ) {
-            mensagem.innerHTML = `O email está escrito errado`
-            validado = false
-       }
-
-        if (SenhaVar != ConfirmarVar ) {
-            mensagem.innerHTML = `As senhas não coincidem`
-            validado = false
-        }
-
-
-        if (validado === true) {
-            mensagem.innerHTML = `Conta criada com sucesso!!`
-           window.location.href = 'Login.html'
-        }
-
-         fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({  
-       
-        nomeServer: NomeVar,
-        emailServer: EmailVar,
-        senhaServer: SenhaVar,
-
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false;
-  }
-
-
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
-
-
-
-
-
+  </main>
+  <script>
+    especiais = ['!', '@', '#', '$', '%', '¨¨', '&', '*']
     
-</script>
+    function Cadastrar() {
+console.log('oiii')
+
+
+      let NomeVar = document.getElementById('ipt_nome').value;
+      let SenhaVar = document.getElementById('ipt_senha').value;
+      let ConfirmarVar = document.getElementById('ipt_confirmar').value;
+      let EmailVar = document.getElementById('ipt_email').value;
+      let validado = true
+
+       if (NomeVar == "" || SenhaVar == "" || ConfirmarVar == "" || EmailVar == "") {
+        mensagem.innerHTML = `Erro! Não deixe nenhum espaço em branco.`;
+        validado = false;
+        return
+      }
+
+      if (SenhaVar.length < 6) {
+        mensagemsenha.innerHTML = `Erro! Senha muito fraca no mínimo 6 caracteres`
+        validado = false;
+        
+      }
+
+      for (let i = 0; i < especiais.length; i++) {
+        if (NomeVar.includes(especiais[i])) {
+          mensagemnome.innerHTML = `Erro! Só insira caracteres não especiais no seu nome.`;
+          validado = false;
+        }
+      }
+
+      if ((EmailVar.indexOf('.') - EmailVar.indexOf('@')) <= 1) {
+        mensagememail.innerHTML = `Erro! Email está escrito errado! está faltando o dominio.`
+        validado = false
+      }
+
+      if (!EmailVar.includes('.') || !EmailVar.includes('@') ) {
+        mensagememail1.innerHTML = `Email está escrito errado! Está faltando elementos.`
+        validado = false;  
+      }
+
+      if (!(SenhaVar == ConfirmarVar)) {
+        mensagemconfirmar.innerHTML = `Erro! As senhas não coincidem.`     
+        validado = false   
+      }
+
+      if (NomeVar.length <= 1 ) {
+        mensagemnome1.innerHTML = `Erro! Insira um nome com mais de uma letra.`
+      }
+
+
+      if (validado == true) {
+
+
+        fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+
+            nomeServer: NomeVar,
+            emailServer: EmailVar,
+            senhaServer: SenhaVar,
+
+          }),
+        })
+          .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+              document.getElementById("mensagem").style.display = "block";
+
+              mensagem.innerHTML =
+                "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+              setTimeout(() => {
+                window.location = "login.html";
+              }, "2000");
+
+              limparFormulario();
+              finalizarAguardar();
+            } else {
+              throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+          });
+      }
+      return false;
+    }
+
+
+
+
+    function sumirMensagem() {
+      document.getElementById("mensagem").style.display = "none";
+    }
+
+
+
+
+
+
+  </script>
 </body>
+
 </html>
