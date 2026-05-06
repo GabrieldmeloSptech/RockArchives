@@ -68,7 +68,8 @@
                     sessionStorage.EMAIL_USUARIO = json.email
                     sessionStorage.NOME_USUARIO = json.nome
                     setTimeout(() => window.location = "index.html", 1000)
-                    mensagem.innerHTML =  `Login feito com sucesso! redirecionando para a tela inicial.`
+                    mensagem.style.color =  `green`
+                    mensagem.innerHTML = `Login feito com sucesso! redirecionando para a tela inicial.`
                     localStorage.setItem('logado', 'true')
                 })
             } else {

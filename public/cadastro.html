@@ -91,7 +91,7 @@ console.log('oiii')
       }
 
       if (!EmailVar.includes('.') || !EmailVar.includes('@') ) {
-        mensagememail1.innerHTML = `Email está escrito errado! Está faltando elementos.`
+        mensagememail1.innerHTML = `Erro! Email está escrito errado! Está faltando elementos.`
         validado = false;  
       }
 
@@ -126,7 +126,7 @@ console.log('oiii')
 
             if (resposta.ok) {
               document.getElementById("mensagem").style.display = "block";
-
+              mensagem.style.color = 'green'
               mensagem.innerHTML =
                 "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 

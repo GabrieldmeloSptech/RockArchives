@@ -226,6 +226,7 @@
   flex-shrink: 0;
   perspective: 1000px;
   cursor: pointer;
+  
 }
 
 .flip-card__inner {

@@ -23,10 +23,10 @@
 
             <ul>
                 <a href="cadastro.html">
-                    <li class="navbar-item">Cadastrar-se</li>
+                    <li  id="cadastro" class="navbar-item">Cadastrar-se</li>
                 </a>
                 <a href="login.html">
-                    <li class="navbar-item">Entrar</li>
+                    <li id="login" class="navbar-item">Entrar</li>
                 </a>
                 <a href="#SobreMim">
                     <li class="navbar-item">Sobre mim</li>
@@ -119,6 +119,12 @@
                 <span class="banda-card__genero">Punk</span>
             </a>
 
+            <a href="SOAD.html" class="banda-card">
+                <img src="./assets/Steal.webp" alt="Nu-Metal">
+                <span class="banda-card__nome">System Of a Down</span>
+                <span class="banda-card__genero">Nu-Metal</span>
+            </a>
+
 
         </div>
     </div>
@@ -178,7 +184,9 @@
 
      if (localStorage.getItem('logado') == 'true') {
       document.getElementById('ola').innerHTML =  'Olá ' + sessionStorage.NOME_USUARIO;
-      
+
+                document.getElementById('cadastro').style.display = 'none'
+                document.getElementById('login').style.display = 'none'
     }
 
 
