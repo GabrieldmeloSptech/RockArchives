@@ -1,0 +1,135 @@
+
+
+    body{
+        background-color: #332c2c;
+    }
+
+.dash-pagina {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    
+}
+
+.dash-header {
+    margin-bottom: 36px;
+}
+
+.dash-eyebrow {
+    font-size: 0.75rem;
+    color: #aa1111;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: monospace;
+    margin-bottom: 8px;
+}
+
+.dash-titulo {
+    font-family: "Limelight", sans-serif;
+    font-size: 2.2rem;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.dash-subtitulo {
+    font-size: 0.85rem;
+    color: #645a5b;
+}
+
+/* CARDS DE STATS */
+.dash-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.dash-card {
+    background-color: #111010;
+    border: 1px solid #2a2424;
+    border-top: 3px solid #aa1111;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dash-card__label {
+    font-size: 0.72rem;
+    color: #645a5b;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+.dash-card__valor {
+    font-family: "Limelight", sans-serif;
+    font-size: 2rem;
+    color: #ffba20;
+    line-height: 1;
+}
+
+.dash-secao {
+    background-color: #111010;
+    border: 1px solid #2a2424;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.dash-secao__titulo {
+    font-family: "Limelight", sans-serif;
+    font-size: 1.1rem;
+    color: #fdf6f0;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 3px solid #aa1111;
+}
+
+.grafico {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grafico__linha {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.grafico__banda {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.82rem;
+    color: #c9b8ad;
+    width: 140px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.grafico__barra-wrap {
+    flex: 1;
+    height: 28px;
+    background-color: #2a2424;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+
+/* RESPONSIVO */
+@media (max-width: 640px) {
+    .dash-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grafico__banda {
+        width: 90px;
+        font-size: 0.72rem;
+    }
+
+    .ranking__barra-wrap {
+        display: none;
+    }
+}

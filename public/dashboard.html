@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RockBase — Dashboard</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  <navbar id="navbar">
+    <div class="navbar-container">
+      <div class="Logo">
+        <a href="index.html"><p><span style="color:#c2682d;">ROCK</span>BASE</p></a>
+      </div>
+      <ul>
+        <li class="navbar-item"><a href="index.html">Home</a></li>
+        <li class="navbar-item"><a href="index.html#SobreMim">Sobre</a></li>
+        <li class="navbar-item"><a href="dashboard.html">Dashboard</a></li>
+        <li class="navbar-item" id="ola">Olá</li>
+        <li onclick="Sair()" class="navbar-item">Logout</li>
+      </ul>
+    </div>
+  </navbar>
+
+  <main class="dash-pagina">
+
+    <div class="dash-header">
+      <h1 class="dash-titulo">Dashboard</h1>
+    </div>
+
+    <div class="dash-cards">
+      <div class="dash-card">
+        <span class="dash-card__label">Bandas</span>
+        <span class="dash-card__valor">7</span>
+      </div>
+      <div class="dash-card">
+        <span class="dash-card__label">Álbuns</span>
+        <span class="dash-card__valor">29</span>
+      </div>
+      <div class="dash-card">
+        <span class="dash-card__label">Pontuação Total</span>
+        <span class="dash-card__valor" id="total-pontos">—</span>
+      </div>
+      <div class="dash-card">
+        <span class="dash-card__label">Partidas</span>
+        <span class="dash-card__valor" id="total-partidas">total</span>
+      </div>
+    </div>
+
+    <div class="dash-secao">
+      <h2 class="dash-secao__titulo">Tentativas por banda</h2>
+      <div class="grafico" id="grafico">
+        <div class="grafico_linha"><canvas id="g1"></canvas></div>
+      </div>
+    </div>
+
+ <div class="dash-secao">
+    <h2 class="dash-secao__titulo">Top 5 - Maiores Pontuadores</h2>
+    <div class="grafico_linha">
+        <canvas id="chartRanking"></canvas>
+    </div>
+</div>
+
+
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-content">
+      <p class="Logo"><span style="color: #c2682d;">Rock</span>Base</p>
+      <ul class="footer-menu">
+        <p>Navegar</p>
+        <li class="footer-menu-item"><a href="index.html">Home</a></li>
+        <li class="footer-menu-item"><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+      <ul class="footer-menu">
+        <p>Conta</p>
+        <li class="footer-menu-item"><a href="login.html">Entrar</a></li>
+        <li class="footer-menu-item"><a href="cadastro.html">Cadastrar</a></li>
+      </ul>
+    </div>
+    <div class="footer-info">
+      <p>Projeto Individual — SP Tech School 2026 · Gabriel Fernandes Gonzalez de Melo</p>
+    </div>
+  </footer>
+
+  <script>
+ /* Aqui começa com o gráfico das tentativas. */
+    let graficoTentativas;
+
+    function atualizarDashboard() {
+    fetch("/dashboard/tentativas")
+        .then(res => res.json())
+        .then(dados => {
+   
+            let labels = dados.map(item => item.banda);
+            let valores = dados.map(item => item.Tentativas);
+            plotarGrafico(labels, valores);
+        })
+        .catch(err => console.error("Erro ao buscar dados:", err));
+}
+
+function plotarGrafico(labels, valores) {
+    const ctx = document.getElementById('g1').getContext('2d');
+
+    if (graficoTentativas) {
+        graficoTentativas.destroy();
+    }
+
+    graficoTentativas = new Chart(ctx, {
+        type: 'bar', 
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Tentativas',
+                data: valores,
+                backgroundColor: 'red',
+                borderColor: 'white',
+                borderWidth: 0.3,
+                barPercentage: 0.5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            },
+            plugins: {
+                legend: { labels: { color: '#fff', font: { family: 'Poppins' } } }
+            }
+        }
+    });
+}
+/* Pra eu não me perder: Daqui pra baixo eu trato do gráfico de ranking desde o fetch até o gráfico em si. */
+
+function carregarRanking() {
+    fetch("/dashboard/pontuacao") 
+        .then(res => res.json())
+        .then(dados => {
+            const nomes = [];
+            const pontos = [];
+
+            
+            dados.forEach(registro => {
+                nomes.push(registro.Jogador);
+                pontos.push(registro.Pontos);
+            });
+            
+            plotarGraficoRanking(nomes, pontos);
+        })
+        .catch(err => console.error("Erro no ranking:", err));
+}
+
+function plotarGraficoRanking(labels, valores) {
+    const GraficoRanking = document.getElementById('chartRanking').getContext('2d');
+
+    new Chart(GraficoRanking, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Pontos acumulados',
+                data: valores,
+                backgroundColor: [
+                    'gold', 
+                    'silver', 
+                    'copper', 
+                    'red', 
+                    'red' 
+                ],
+                borderWidth: 0,
+                borderRadius: 1,
+                barPercentage: 0.5
+            }]
+        },
+        options: {
+            indexAxis: 'y', 
+            responsive: true,
+            scales: {
+                x: { beginAtZero: true, grid: { display: false } },
+                y: { grid: { display: false } }
+            },
+            plugins: {
+                legend: { display: false } 
+            }
+        }
+    });
+}
+/* Aqui acaba o gráfico do ranking e abaixo comeca o processo das kpis. */
+function KPIum(params) {
+fetch("/dashboard/somakpi")
+.then(res => res.json())
+.then(dados => {
+  let total = 0
+  dados.forEach(registro =>{
+
+    total = registro.Total
+    document.getElementById("total-pontos").innerHTML = total
+  })})  .catch(err => console.error("Erro na primeira kpi:", err));
+  
+
+}
+
+function KPIdois(params) {
+  fetch("/dashboard/partidaskpi")
+  .then(res => res.json())
+  .then(dados => {
+    let totalpartidas = 0
+    dados.forEach(registro => {
+
+      totalpartidas = registro.Abacate
+      document.getElementById("total-partidas").innerHTML = totalpartidas
+
+    })}).catch(err => console.error("Erro na segunda kpi:", err));
+  }
+
+/* Aqui acaba a parte das kpis e começa a parte do onload onde carrega a pagina antes do back e a questão do storage e fim. */
+
+
+window.onload = () => {
+    atualizarDashboard(); 
+    carregarRanking();
+    KPIum();
+    KPIdois();
+    log();
+};
+
+function log() {
+   if (localStorage.getItem('logado') == 'true') {
+      document.getElementById('ola').innerHTML =  'Olá ' + sessionStorage.NOME_USUARIO;
+
+    
+    }
+}
+
+ function Sair() {
+        localStorage.removeItem('logado')
+        window.location.href = 'index.html'
+        
+    }
+
+     if (localStorage.getItem('logado') !== 'true') {
+      alert('Entre em sua conta para continuar.')
+      window.location.href = 'login.html'
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
